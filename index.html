@@ -63,7 +63,10 @@
     // look for 'audio' element with data-key (using ES6 template strings)
     // and log it in console
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    console.log(audio);
+    // if there is no 'audio', stop function
+    if(!audio) return;
+    // play 'audio' element
+    audio.play();
   });
 
 </script>
