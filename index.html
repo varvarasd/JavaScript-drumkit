@@ -72,7 +72,10 @@
   });
   function removeTransition(e){
     if (e.propertyName !== 'transform') return; // skip if not transform
-    console.log(e.propertyName);
+    // 'this' selects whatever 'addEventListener' got called against it
+    // which in our case is 'key' - select eventlistener caller and
+    // remove .playing class from it
+    this.classList.remove('playing');
   };
   // select all '.key' classes
   const keys = document.querySelectorAll('.key');
