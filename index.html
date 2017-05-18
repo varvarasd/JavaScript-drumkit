@@ -65,6 +65,8 @@
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     // if there is no 'audio', stop function
     if(!audio) return;
+    // rewind the sound for unconditional consecutive playing
+    audio.currentTime = 0;
     // play 'audio' element
     audio.play();
   });
