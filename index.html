@@ -70,6 +70,15 @@
     audio.play();
     key.classList.add('playing');
   });
+  function removeTransition(e){
+    if (e.propertyName !== 'transform') return; // skip if not transform
+    console.log(e.propertyName);
+  };
+  // select all '.key' classes
+  const keys = document.querySelectorAll('.key');
+  // and listen for the event 'transition' on each .key
+  // after which, run removeTransition function
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 
 </script>
 
