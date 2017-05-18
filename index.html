@@ -60,15 +60,15 @@
 <script>
   // add window 'keydown' event listener
   window.addEventListener('keydown', function(e){
-    // look for 'audio' element with data-key (using ES6 template strings)
-    // and log it in console
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
     // if there is no 'audio', stop function
     if(!audio) return;
     // rewind the sound for unconditional consecutive playing
     audio.currentTime = 0;
     // play 'audio' element
     audio.play();
+    key.classList.add('playing');
   });
 
 </script>
